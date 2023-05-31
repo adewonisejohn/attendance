@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    
+    <body>
+        <center>
+            <h5 class="heading">ATTENDANCE SYSTEM</h5>
+            <form method="POST" action="/login" enctype="multipart/form-data">
+                <input type="text" placeholder="Matric Number" name="matric_no" required>
+                
+                <input type="password" placeholder="Password" name="password" required>
+                <input style="border:none;" type="file" accept="image/*" name="image" placeholder="Upload an image" required/>
+                <button class="submit-button" type="submit" value="Login" name="submit">Login</button>
+            </form>
+            <p class="signup-link">or <a href="/signup">Register</a></p>
+    </center>
+    </body>
+
+</html>

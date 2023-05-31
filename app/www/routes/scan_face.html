@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/scan_face.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+</head>
+<body onload="openCam()">
+    <center><div class="snap-button" id="snap-button" onclick="takepicture()">
+        
+    </div></center>
+    
+    <div class="camera">
+        <video id="videoCam" autoplay style="height:100vh;width:100vw;"height=500 width="500"></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    <img id="photo" alt="The screen capture will appear in this box." />
+    <a href="#" id="link" download="signup.html">kfdjkfjkd</a>
+    <script>
+        const sanp_button = document.getElementById("snap-button");
+        let All_mediaDevices=navigator.mediaDevices
+        var video = document.getElementById('videoCam');
+        const canvas = document.getElementById("canvas"); 
+        const link = document.getElementById("link");
+        function openCam(){
+           if (!All_mediaDevices || !All_mediaDevices.getUserMedia) {
+              console.log("getUserMedia() not supported.");
+              return;
+           }
+           All_mediaDevices.getUserMedia({
+              video: true
+           })
+           .then(function(vidStream) {
+              if ("srcObject" in video) {
+                 video.srcObject = vidStream;
+              } else {
+                 video.src = window.URL.createObjectURL(vidStream);
+              }
+              video.onloadedmetadata = function(e) {
+                 video.play();
+              };
+           })
+           .catch(function(e) {
+              console.log(e.name + ": " + e.message);
+           });
+        }
+
+        function takepicture() {
+            const context = canvas.getContext("2d");
+            var width =100;
+            var height =100;
+            context.drawImage(video, 0, 0, width, height);
+
+            const data = canvas.toDataURL("image/png");
+            canvas.
+            photo.setAttribute("src", data);
+            link.setAttribute("download",pho.src);
+        }
+     </script>
+    
+</body>
+</html>

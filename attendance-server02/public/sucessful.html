@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <div style="margin-top:55%">
+            <img src="./assets/successful.png">
+            <h5 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size:150%;">Successful</h5>
+            <a href="/" style="display:none;" id="link">click</a>
+        </div>
+    </center>
+    <script>
+        var link = document.getElementById("link");
+        const myTimeout = setTimeout(myGreeting, 6000);
+        function myGreeting() {
+            console.log('hello world')
+            link.click()
+        }
+
+    </script>
+</body>
+</html>

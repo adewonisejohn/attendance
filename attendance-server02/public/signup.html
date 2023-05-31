@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sign up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/signup.css">
+    </head>
+    <body>
+        <center>
+            <h5 class="heading">REGISTER</h5>
+            <form method="POST" action="/signup" enctype="multipart/form-data">
+                <input type="text" placeholder="Full name" name="full_name" required>
+                <input type="text" placeholder="Matric Number" name="matric_no" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <input type="file" name="image" style="border:0px;margin-top:5vh;" required></input>
+                <p>Upload a picture of your face :</p>
+                <input class="submit-button" type="submit" value="Register">
+            </form>
+            <p class="signup-link">or <a href="/">Login</a></p>
+    </center>
+    </body>
+</html>
