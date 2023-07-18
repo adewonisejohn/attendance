@@ -6,7 +6,13 @@ const multer = require('multer');
 const path = require("path");
 const fs = require("fs");
 var csvParse= require('csv-parse');
+const { parse } = require("csv-parse");
+
+
+const admin_request = require("./admin")
 var new_records=null;
+
+
 
 
 app.use(express.json())
@@ -281,7 +287,6 @@ app.post("/signup",upload_register.single('image'),function(req,res){
 })
 
 
-
 app.post("/signout",upload.single('image'),function(req,res){
     var password = req.body.password;
     var matric_no = req.body.matric_no;
@@ -427,6 +432,9 @@ app.post("/signout",upload.single('image'),function(req,res){
     });
 
 });
+
+
+app.use("/admin",admin_request)
 
 app.listen(5000,function(){
     console.log("server started on port 5000")
